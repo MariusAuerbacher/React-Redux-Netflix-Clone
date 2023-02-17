@@ -1,35 +1,21 @@
-/* eslint-disable no-unused-vars */
-import {
-  combineReducers,
-  configureStore,
-  middleware
-} from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
-
-
-import musicReducer from "../reducers/MainPageReducer";
-
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
+import MainPageReducer from "../reducers/MainPageReducer";
+import { persistReducer, persistStore } from "redux-persist";
 
 const persistConfig = {
   key: "root",
   storage: storage,
-  
 };
 
-const bigReducer = combineReducers({
-  music: musicReducer,
-
+const mainReducer = combineReducers({
+  search: MainPageReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, bigReducer);
+const persistedReducer = persistReducer(persistConfig, mainReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }),
 });
 
 export const persistor = persistStore(store);

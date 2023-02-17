@@ -1,17 +1,19 @@
 import React from 'react'
 import './MainPage.css'
 import avatar from '../assets/avatar.png'
+import RenderMusic from './RenderMusic';
 
 function MainPage() {
   return (
+    <div>
     <div className="container-fluid col-10" id="container">
       <div className="col-12 d-flex top-bar justify-content-between align-items-center mt-2 mb-3" id="header">
         <div className="topbar-btn-col row d-flex justify-content-between">
             <div className="col-1 d-flex align-items-center arrow-bg">
-                <i className="bi bi-chevron-left arrow" onclick="loadSections()"></i>
+                <i className="bi bi-chevron-left arrow"></i>
             </div>
             <div className="col-1 d-flex align-items-center arrow-bg">
-                <i className="bi bi-chevron-right arrow" onclick="loadSections()"></i>
+                <i className="bi bi-chevron-right arrow"></i>
             </div>
             <div className="search-bar row col ml-4">
                 <div className="input-group flex-nowrap d-none" id="input">
@@ -53,8 +55,12 @@ function MainPage() {
             </div>
         </div>
     </div>
+ 
     </div>
-  
+   
+    
+   <RenderMusic/>
+   </div>
 
 
   )

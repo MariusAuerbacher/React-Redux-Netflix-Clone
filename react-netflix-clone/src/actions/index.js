@@ -1,49 +1,40 @@
+export const STORE_MUSIC = 'STORE_MUSIC'
+export const GET_MUSIC = "GET_MUSIC";
+export const SET_SEARCH = "SET_SEARCH"
 
-/*export const GET_MUSIC = "GET_MUSIC";
 
+export const storeMusic = (payload) => {
+  return {
+    type: STORE_MUSIC,
+    payload: payload,
+  }
+}
 
-export const fetchMusic = (endpoint) => {
-
-  const baseEndpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
-
-  return async (dispatch, getState) => {
-    try {
-      const response = await fetch(baseEndpoint + endpoint);
-      if (response.ok) {
-        const { data } = await response.json();
-
-       
-      } else {
-        alert("Error fetching results");
-      }
-    } catch (error) {
-      console.log(error);
-
-    }
-  };
-};*/
-
-export const FETCH_SEARCH = "FETCH_SEARCH";
-export const SET_SEARCH = "SET_SEARCH";
-
-export const setSearch = (searchQuery) => {
+export const setSearch= (searchquery) => {
   return {
     type: SET_SEARCH,
-    payload: searchQuery,
-  };
-};
+    payload: searchquery,
+  }
+}
 
-export const fetchSearch = (value) => {
+
+
+export const fetchMusic = (value) => {
+
+  
+
+
   return async (dispatch, getState) => {
-    const response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${value}`
-    );
-
-    const fetchedData = await response.json();
-    dispatch({
-      type: FETCH_SEARCH,
-      payload: fetchedData,
-    });
+    
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen");
+      if (response.ok) {
+        const data  = await response.json();
+        dispatch({
+          type: GET_MUSIC,
+          payload: data
+        })
+       
+      } 
   };
 };
+

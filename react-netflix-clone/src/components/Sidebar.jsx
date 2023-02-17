@@ -15,7 +15,7 @@ function Sidebar() {
                     <i className="bi bi-house-door-fill"></i>
                     Home
                 </button>
-                <button className="my-2 side-bar-text side-bar-search d-block" onclick="searchBarVisible()">
+                <button className="my-2 side-bar-text side-bar-search d-block">
                     <i className="bi bi-search"></i>
                     Search
                 </button>

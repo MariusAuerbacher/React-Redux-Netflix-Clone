@@ -1,40 +1,21 @@
-/* import { GET_MUSIC } from "../actions/index";
+import { GET_MUSIC, SET_SEARCH } from "../actions/index";
 
 const initialState = {
-  musicStore: [],
+  musicData: [],
+  searchquery: ""
+  
 };
 
 const musicReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MUSIC:
-      return { ...state, musicStore: [...state.musicStore, action.payload] };
+      return { ...state, musicData: action.payload };
+      case SET_SEARCH:
+        return { ...state, searchquery: action.payload };
     default:
       return state;
   }
 };
 
-export default musicReducer; */
+export default musicReducer
 
-import { FETCH_SEARCH, SET_SEARCH } from "../actions/index";
-
-const initialState = {
-  searchquery: "search here...",
-  searchData: [],
-};
-
-const searchReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_SEARCH:
-      return {
-        ...state,
-
-        searchData: action.payload,
-      };
-    case SET_SEARCH:
-      return { ...state, searchquery: action.payload };
-    default:
-      return state;
-  }
-};
-
-export default searchReducer;

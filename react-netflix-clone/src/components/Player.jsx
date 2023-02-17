@@ -29,9 +29,9 @@ function Player() {
     <div className="progress-controller">
         <div className="control-buttons mt-4">
             <i className="fas fa-random"></i>
-            <i className="fas fa-step-backward" onclick="onClickPrev()"></i>
-            <i id="play-pause-btn" onclick="onPlayPause(event)" className="play-pause fas fa-play"></i>
-            <i className="fas fa-step-forward" onclick="onClickNext()"></i>
+            <i className="fas fa-step-backward"></i>
+            <i id="play-pause-btn" className="play-pause fas fa-play"></i>
+            <i className="fas fa-step-forward"></i>
             <i className="fas fa-undo-alt"></i>
         </div>
         <div className="progress-container mt-n4">

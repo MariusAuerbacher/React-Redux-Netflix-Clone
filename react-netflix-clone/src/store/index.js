@@ -1,8 +1,15 @@
-import {configureStore, combineReducers} from '@reduxjs/toolkit'
-import { persistReducer, persistStore} from 'redux-persist'
-import storage from "redux-persist/lib/storage";
-import MainPageReducer from '../reducers/MainPageReducer';
+/* eslint-disable no-unused-vars */
+import {
+  combineReducers,
+  configureStore,
+  middleware
+} from "@reduxjs/toolkit";
+import { persistReducer, persistStore } from "redux-persist";
 
+
+import musicReducer from "../reducers/MainPageReducer";
+
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
   key: "root",
@@ -11,7 +18,8 @@ const persistConfig = {
 };
 
 const bigReducer = combineReducers({
-  music: MainPageReducer,
+  music: musicReducer,
+
 });
 
 const persistedReducer = persistReducer(persistConfig, bigReducer);

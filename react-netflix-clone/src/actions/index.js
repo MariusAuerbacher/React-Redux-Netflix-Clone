@@ -1,26 +1,38 @@
 
-export const LOADING_STATE = "LOADING_STATE";
-export const ERROR_STATE = "ERROR_STATE";
-export const GET_MUSIC = "GET_MUSIC";
-export const SET_SEARCH = "SET_SEARCH";
+/*export const GET_MUSIC = "GET_MUSIC";
+
+
+export const fetchMusic = (endpoint) => {
+
+  const baseEndpoint =
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch(baseEndpoint + endpoint);
+      if (response.ok) {
+        const { data } = await response.json();
+
+       
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+};*/
+
 export const FETCH_SEARCH = "FETCH_SEARCH";
-export const PLAY_MUSIC = "PLAY_MUSIC";
-export const ADD_TO_FAV = "ADD_TO_FAV";
+export const SET_SEARCH = "SET_SEARCH";
 
-export const addToFavActoin = (song) => {
+export const setSearch = (searchQuery) => {
   return {
-    type: ADD_TO_FAV,
-    payload: song,
+    type: SET_SEARCH,
+    payload: searchQuery,
   };
 };
-
-export const playSongAction = (song) => {
-  return {
-    type: PLAY_MUSIC,
-    payload: song,
-  };
-};
-
 
 export const fetchSearch = (value) => {
   return async (dispatch, getState) => {
@@ -33,49 +45,5 @@ export const fetchSearch = (value) => {
       type: FETCH_SEARCH,
       payload: fetchedData,
     });
-  };
-};
-
-export const fetchMusic = (endpoint, folder, timer) => {
-  const baseEndpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-
-  return async (dispatch, getState) => {
-    try {
-      const response = await fetch(baseEndpoint + endpoint);
-      if (response.ok) {
-        const { data } = await response.json();
-        setTimeout(() => {
-          dispatch({
-            type: GET_MUSIC,
-            payload: { [folder]: data },
-          });
-          dispatch({
-            type: LOADING_STATE,
-            payload: false,
-          });
-        }, timer);
-      } else {
-        alert("Error fetching results");
-        dispatch({
-          type: LOADING_STATE,
-          payload: false,
-        });
-        dispatch({
-          type: ERROR_STATE,
-          payload: true,
-        });
-      }
-    } catch (error) {
-      console.log(error);
-      dispatch({
-        type: LOADING_STATE,
-        payload: false,
-      });
-      dispatch({
-        type: ERROR_STATE,
-        payload: true,
-      });
-    }
   };
 };

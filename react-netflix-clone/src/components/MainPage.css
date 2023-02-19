@@ -98,7 +98,7 @@ hr {
 .top-bar {
   background-color: transparent;
   position: sticky;
-  z-index: 1;
+  z-index: 0;
   top: 0;
   height: 8vh;
 }

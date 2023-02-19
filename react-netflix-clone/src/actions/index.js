@@ -19,14 +19,14 @@ export const setSearch= (searchquery) => {
 
 
 
-export const fetchMusic = (value) => {
+export const fetchMusic = () => {
 
   
 
 
   return async (dispatch, getState) => {
     
-      const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen");
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=hiphop");
       if (response.ok) {
         const data  = await response.json();
         dispatch({

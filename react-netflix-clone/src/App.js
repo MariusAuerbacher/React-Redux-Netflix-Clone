@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MainPage from "./components/MainPage";
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
+import Topbar from "./components/Topbar";
+
 
 
 
@@ -12,13 +14,21 @@ function App() {
   return (<>
     
     <BrowserRouter>
+   
+    <div className="container-fluid d-flex page-wrapper">
+    <Sidebar/>
 
+    <Topbar/>
     <MainPage/>
  
-    <Sidebar/>
- 
-    <Player/>
+    
+  
+    </div>
+   
+   
 
+    <Player/>
+   
     <Routes>
     
     </Routes>

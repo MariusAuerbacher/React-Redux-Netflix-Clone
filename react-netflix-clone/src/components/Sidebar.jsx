@@ -5,11 +5,10 @@ import logo from '../assets/logo.jpg'
 function Sidebar() {
   return (
 
-      <div className="container-fluid page-wrapper">
-        <div className="row">
-          <div className="col-2  d-block row">
+  
+          <div className="col-2  d-flex side-bar">
 
-            <div className="container-fluid d-block side-bar ">
+            <div className="side-bar">
                 <img className="logo col-10 my-3 mt-4" src={logo} alt=""/>
                 <button className="my-2 side-bar-text d-block align-items-center">
                     <i className="bi bi-house-door-fill"></i>
@@ -50,8 +49,7 @@ function Sidebar() {
                 </button>
             </div>
         </div>
-      </div>
-    </div>
+
     )
 }
   

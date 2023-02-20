@@ -6,11 +6,11 @@ import RenderMusic from './RenderMusic';
 function MainPage() {
   return (
     <>
-    <div class="container-fluid page-wrapper">
+    <div className="container-fluid page-wrapper">
         <h1>hello</h1>
-        <div class="row">
+        <div className="row">
 
-        <div class="col-2  d-block row">
+        <div className="col-2  d-block row">
 
         <RenderMusic/>
         </div>
